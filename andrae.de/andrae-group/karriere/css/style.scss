@@ -85,6 +85,7 @@ a{@include mt;}
   &::before {
     content: '';
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -93,8 +94,15 @@ a{@include mt;}
     opacity: 0.54;
   }
 
+  img {
+    z-index: 0;
+    object-fit: cover;
+  }
+
   .section-title {
     position: relative;
+    z-index: 2;
+    color: #fff;
   }
 }
 

@@ -33,14 +33,21 @@ a {
   .headerBlock::before {
     content: '';
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #767676;
     opacity: 0.54; }
+  .headerBlock img {
+    z-index: 0;
+    -o-object-fit: cover;
+    object-fit: cover; }
   .headerBlock .section-title {
-    position: relative; }
+    position: relative;
+    z-index: 2;
+    color: #fff; }
 
 .linksBlock {
   display: -webkit-box;
