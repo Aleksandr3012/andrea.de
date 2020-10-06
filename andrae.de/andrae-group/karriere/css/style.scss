@@ -77,22 +77,34 @@ a{@include mt;}
   top: 0;
   position: sticky;
   margin-bottom: 40px;
+  z-index: 200;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  @include mt;
+  &.sticky{
+    border-bottom: 1px solid #333;
+  }
 }
 .linksBlock {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding-top: 15px;
-
+  
   &__item {
+    padding-top: 15px;
+    // padding-bottom: rem*;
+    display: inline-block;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
     border-bottom: solid 2px transparent;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     text-decoration: none !important;
-    margin-bottom: 15px;
+    
     @include mt;
 
     &:not(:last-child) {

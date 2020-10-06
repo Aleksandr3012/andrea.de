@@ -96,6 +96,18 @@ body h5 {
   position: -webkit-sticky;
   position: sticky;
   margin-bottom: 40px;
+  z-index: 200;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.36s;
+  -o-transition: all 0.36s;
+  transition: all 0.36s;
+}
+.top-nav.sticky {
+  border-bottom: 1px solid #333;
 }
 
 .linksBlock {
@@ -110,16 +122,16 @@ body h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 15px;
 }
 .linksBlock__item {
+  padding-top: 15px;
+  display: inline-block;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 400;
   border-bottom: solid 2px transparent;
-  padding-bottom: 5px;
+  padding-bottom: 12px;
   text-decoration: none !important;
-  margin-bottom: 15px;
   -webkit-transition: all 0.36s;
   -o-transition: all 0.36s;
   transition: all 0.36s;
