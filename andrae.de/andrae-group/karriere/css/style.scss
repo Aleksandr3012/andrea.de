@@ -1,72 +1,9 @@
 // mixin
-@mixin a-cent($xy:xy) {
-  position: absolute;
-  @if $xy==xy {
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
-  }
-  @else if $xy==x {
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @else if $xy==y {
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-}
-@mixin a-cent1($xy:xy) {
-  @if $xy==xy {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    transform: translate(-50%, -50%);
-  }
-  @else if $xy==x {
-    position: absolute;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-  }
-  @else if $xy==y {
-    position: absolute;
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
-  }
-}
-@mixin roww($a) {
-  --bs-gutter-x: #{$a};
-  margin-left: calc(-1 * var(--bs-gutter-x)/ 2);
-  margin-right: calc(-1 * var(--bs-gutter-x)/ 2);
-  >* {
-    padding-left: calc(var(--bs-gutter-x)/2);
-    padding-right: calc(var(--bs-gutter-x)/2);
-  }
-}
-@mixin mt($s: .36) {
-  transition: all #{$s}s;
-}
-@mixin block($w: 1, $h: 1) {
-  display: block;
-  position: relative;
-  &::before {
-    position: relative;
-    content: '';
-    position: relative;
-    height: 0;
-    display: block;
-    padding-bottom: ($h/$w *100%);
-  }
-}
+@import "sass/bourbon/app/assets/stylesheets/bourbon";
+// @import "../../node_modules/rfs/scss";
+
+@import "sass/mixin";
+@import "sass/fonts";
 img.img-bg, .picture-bg {position: absolute;z-index: -1;left: 0;top: 0;width: 100%;height: 100%;}
 .ttu {text-transform: uppercase;}
 a{@include mt;}
@@ -105,21 +42,33 @@ a{@include mt;}
     max-width: 1100px;
   }
 
-  h1 {
-    margin-top: 0;
-    font-size: 47px;
-    font-weight: 600;
-    text-transform: none;
-  }
-
-  h5 {
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: none;
-
-  }
 }
+    body h1 {
+      margin-top: 0;
+      font-size: 47px;
+      font-weight: 600;
+      text-transform: none;
+    }
+  
+    body h5 {
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: none;
+      margin-bottom: 1em;
+    }
+    @media (min-width: 1200px){
 
+      .row--lg{
+        @include roww(80px);
+      }
+    }
+.top-nav{
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: sticky;
+  margin-bottom: 40px;
+}
 .linksBlock {
   display: flex;
   flex-wrap: wrap;
@@ -140,9 +89,73 @@ a{@include mt;}
     &:not(:last-child) {
       margin-right: 30px;
     }
-
+    &.active,
     &:hover {
+      color: #88535e;
       border-color: #b61928;
     }
   }
+}
+
+.section{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  a{
+    color: #b61928;
+    text-transform: none;
+  }
+ 
+  h5{
+    text-transform: none;
+  }
+  &__content{
+    max-width: 430px;
+  }
+  video{
+    @include block(1128, 623);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1128px;
+  }
+}
+.section-2{
+  &__content{
+    margin-left: auto;
+    max-width: 850px;
+  }
+}
+.panel-title>a{
+
+}
+.section-final{
+  h5{
+    text-transform: uppercase;
+  }
+}
+
+.new-footer{
+  background-color: #f7f7f7;
+}
+.text-red{
+  color: #b61928;
+}
+
+.new-footer{
+  h5{
+    margin-right: -150px;
+  }
+  .row{
+    display: flex;
+    &::before,
+    &::after{
+      display: none;
+    }
+  }
+}
+.new-footer__col{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: center;
+  // align-items: center;
 }
